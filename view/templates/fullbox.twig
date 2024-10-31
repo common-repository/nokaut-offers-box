@@ -1,0 +1,30 @@
+<div id="NOK-Full-Box">
+    <div class="NOK-Wrapper">
+        {% for product in products %}
+            <div class="NOK-ItemWrapper">
+                {% set clickUrl = product.getOfferWithBestPrice.getClickUrl|clickUrl(campaign_id) %}
+                <a href="{{ clickUrl }}" target="_blank" {% if clickUrl|isNoFollowUrl %}rel="nofollow"{% endif %} class="NOK-OfferLink">
+                    <span class="NOK-Item">
+                        <img src="{{ product.getPhotoId|photoUrl('200x200',product.getTitle) }}" class="NOK-Image"/>
+                        <span class="NOK-Title">{{ product.getTitle|raw }}</span>
+                        <span class="NOK-Price">{{ product.getOfferWithBestPrice.getPrice|price }} zł</span>
+                        <span class="NOK-CTA">ZOBACZ</span>
+                    </span>
+                    <span class="NOK-MoreInfo">
+                        <span class="NOK-Desc">{{ product.descriptionHtml|striptags|raw }}</span>
+                        <ul>
+                            {% for property in product.properties %}
+                              {% if property.name not in ['EAN'] %}
+                                <li>
+                                    <span title="{{ property.name|raw }}">{{ property.name|raw }}</span>
+                                    <strong>{% if property.value %}{% if property.value is iterable %}{{ property.value|join(', ') }}&nbsp;{{ property.unit|raw }}{% else %}{{ property.value }}&nbsp;{{ property.unit|raw }}{% endif %}{% else %}-{% endif %}</strong>
+                                </li>
+                              {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </span>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

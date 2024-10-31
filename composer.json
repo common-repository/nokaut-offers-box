@@ -1,0 +1,19 @@
+{
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/nokaut/api-kit"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.5",
+        "twig/twig": "3.*",
+        "nokaut/api-kit": "v1.8.0"
+    },
+    "scripts": {
+        "post-update-cmd": ["echo [WARNING] Delete all .git dirs", "rm -rf vendor/**/**/.git"],
+        "post-install-cmd": ["echo [WARNING] Delete all .git dirs", "rm -rf vendor/**/**/.git"]
+    }
+}

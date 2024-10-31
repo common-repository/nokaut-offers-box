@@ -1,0 +1,17 @@
+# phpstorm
+.idea
+
+# osx noise
+.DS_Store
+profile
+
+# composer
+vendor/*
+composer.phar
+composer.lock
+
+# build
+build/coverage/
+build/logs/
+
+.phpunit.result.cache

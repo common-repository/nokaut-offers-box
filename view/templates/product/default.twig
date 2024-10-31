@@ -1,0 +1,157 @@
+<div class="NOK-Product-Default NOK-box-container" data-hook="nokaut-product-root" id="NOK-Product-Default">
+    <div class="NOK-Wrapper">
+        <div class="NOK-ItemWrapper">
+
+            <div class="NOK-product-view">
+
+                <div class="NOK-full-product">
+                    <div class="NOK-product-header">
+                        <span class="NOK-Title">
+                            {{ product.getTitle|raw }}
+                        </span>
+                        <span class="NOK-Price">
+                            od <span>{{ offerRecommended.getPrice|price|raw }}</span> <em>zł</em>
+                        </span>
+                    </div>
+
+                    <div class="NOK-product-description">
+                        <div class="NOK-product-left">
+                            <img src="{{ product.getPhotoId|photoUrl('200x200',product.getTitle) }}" class="NOK-Image"/>
+                        </div>
+                        <div class="NOK-product-right">
+                            <div class="NOK-top-more-info">
+                                {% for property in product.properties %}
+                                  {% if property.name not in ['EAN'] %}
+                                    <span class="list-item" title="{{ property.name|raw }}">{{ property.name|raw }}:
+                                      <span>{% if property.value %}{% if property.value is iterable %}{{ property.value|join(', ') }}&nbsp;{{ property.unit|raw }}{% else %}{{ property.value }}&nbsp;{{ property.unit|raw }}{% endif %}{% else %}-{% endif %}</span>
+                                    </span>
+                                  {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="NOK-desc-more-info" data-hook="nokaut-description-box">
+                                <span class="NOK-Desc" data-hook="nokaut-description-text">
+                                    {{ product.descriptionHtml|striptags|raw }}
+                                    <span class="NOK-More-btn-desc" data-hook="nokaut-hide-more-desc">zwiń pełen opis</span>
+                                </span>
+                                <span class="NOK-More-btn-desc" data-hook="nokaut-show-more-desc">rozwiń pełen opis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% if offerRecommended %}
+                    <div class="NOK-small-desc-product">
+                        {% set clickUrl = offerRecommended.getClickUrl|clickUrl(campaign_id) %}
+                        <a href="{{ clickUrl }}" target="_blank" {% if clickUrl|isNoFollowUrl %}rel="nofollow"{% endif %} class="NOK-Link"></a>
+
+                        <div class="NOK-small-left">
+                             <span class="NOK-OfferPhoto">
+                                    <img src="{{ offerRecommended.getPhotoId|photoUrl('90x90',offerRecommended.getTitle) }}"
+                                         alt="{{ offerRecommended.getTitle|raw }}" width="90" height="90">
+                             </span>
+                        </div>
+
+                        <div class="NOK-small-center">
+                            <span class="NOK-Price">
+                                <span>{{ offerRecommended.getPrice|price|raw }}</span> <em>zł</em>
+                            </span>
+
+                            <span class="NOK-Shop">
+                                {% if offerRecommended.getShop.getUrlLogo %}
+                                    <img src="{{ offerRecommended.getShop.getUrlLogo|shopLogoUrl('90x90',offerRecommended.getShop.getName) }}"
+                                         alt="{{ offerRecommended.getShop.getName|raw }}"
+                                         width="88" height="31">
+                                {% else %}
+                                    <p>{{ offerRecommended.getShop.getName }}</p>
+                                {% endif %}
+
+                                {% if offerRecommended.shop.opineoRating and offerRecommended.shop.opineoRating.ratingCount > 0 %}
+                                    <p><span>{{ offerRecommended.shop.opineoRating.ratingCount }}</span> opinie</p>
+                                    {% if (offerRecommended.shop.opineoRating.rating/2)|round %}
+                                    <p><span class="NOK-stars-bg">
+                                            <i class="NOK-Stars s{{ (offerRecommended.shop.opineoRating.rating/2)|round }}"></i>
+                                            </span>
+                                    </p>
+                                    {% endif %}
+                                {% endif %}
+                            </span>
+                        </div>
+
+                        <div class="NOK-small-right">
+                            <div class="NOK-btn">
+                                {% set clickUrl = offerRecommended.getClickUrl|clickUrl(campaign_id) %}
+                                <a href="{{ clickUrl }}" target="_blank" {% if clickUrl|isNoFollowUrl %}rel="nofollow"{% endif %} class="NOK-OfferLink">
+                                    przejdź do sklepu <span></span>
+                                </a>
+                            </div>
+                            <span class="NOK-Title">
+                                {{ offerRecommended.getTitle|raw }}
+                            </span>
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if offers|length %}
+                    <span class="NOK-ShowMore" data-hook="nokaut-show-more-offers">Zobacz więcej</span>
+
+                    <div class="NOK-OffersAll" data-hook="nokaut-more-offers">
+                        {% for offer in offers|slice(1,offers|length) %}
+                            <div class="NOK-small-desc-product">
+                                {% set clickUrl = offer.getClickUrl|clickUrl(campaign_id) %}
+                                <a href="{{ clickUrl }}" target="_blank" {% if clickUrl|isNoFollowUrl %}rel="nofollow"{% endif %} class="NOK-Link"></a>
+                                <div class="NOK-small-left">
+                                     <span class="NOK-OfferPhoto">
+                                        <img src="{{ offer.getPhotoId|photoUrl('90x90',offer.getTitle) }}"
+                                             alt="{{ offer.getTitle|raw }}" width="90" height="90">
+                                     </span>
+                                </div>
+
+                                <div class="NOK-small-center">
+                                    <span class="NOK-Price">
+                                        <span>{{ offer.getPrice|price|raw }}</span> <em>zł</em>
+                                    </span>
+
+                                    <span class="NOK-Shop">
+                                        {% if offer.getShop.getUrlLogo %}
+                                            <img src="{{ offer.getShop.getUrlLogo|shopLogoUrl('90x90',offer.getShop.getName) }}"
+                                                 alt="{{ offer.getShop.getName|raw }}"
+                                                 width="88" height="31">
+                                        {% else %}
+                                            <p>{{ offerRecommended.getShop.getName }}</p>
+                                        {% endif %}
+
+                                        {% if offer.shop.opineoRating and offer.shop.opineoRating.ratingCount > 0 %}
+                                            <p><span>{{ offer.shop.opineoRating.ratingCount }}</span> opinie</p>
+                                            {% if (offer.shop.opineoRating.rating/2)|round %}
+                                            <p><span class="NOK-stars-bg">
+                                                    <i class="NOK-Stars s{{ (offer.shop.opineoRating.rating/2)|round }}"></i>
+                                                    </span>
+                                            </p>
+                                            {% endif %}
+                                        {% endif %}
+                                    </span>
+                                </div>
+
+                                <div class="NOK-small-right">
+                                    <div class="NOK-btn">
+                                        {% set clickUrl = offer.getClickUrl|clickUrl(campaign_id) %}
+                                        <a href="{{ clickUrl }}" target="_blank" {% if clickUrl|isNoFollowUrl %}rel="nofollow"{% endif %} class="NOK-OfferLink">
+                                            przejdź do sklepu <span></span>
+                                        </a>
+                                    </div>
+                                    <span class="NOK-Title">
+                                        {{ offer.getTitle|raw }}
+                                    </span>
+                                </div>
+
+                            </div>
+                        {% endfor %}
+
+                        <span class="NOK-HideMore" data-hook="nokaut-hide-more-offers">Ukryj</span>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>

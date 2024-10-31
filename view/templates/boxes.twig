@@ -1,0 +1,20 @@
+<div id="NOK-Simple-Boxs" {% if classes %}class="{{ classes|join(' ') }}"{% endif %}>
+    <div class="NOK-Wrapper">
+        {% for product in products %}
+            <div class="NOK-ItemWrapper">
+                {% set clickUrl = product.getOfferWithBestPrice.getClickUrl|clickUrl(campaign_id) %}
+                <a href="{{ clickUrl }}" target="_blank" {% if clickUrl|isNoFollowUrl %}rel="nofollow"{% endif %} class="NOK-OfferLink">
+                    {% if 'Big' in classes %}
+                        {% set photoSize = '200x200' %}
+                    {% else %}
+                        {% set photoSize = '100x100' %}
+                    {% endif %}
+                    <img src="{{ product.getPhotoId|photoUrl(photoSize,product.getTitle) }}" class="NOK-Image"/>
+                    <span class="NOK-Title">{{ product.getTitle|raw }}</span>
+                    <span class="NOK-Price">{{ product.getOfferWithBestPrice.getPrice|price }} zł</span>
+                    <span class="NOK-CTA">ZOBACZ</span>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

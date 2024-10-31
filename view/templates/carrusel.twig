@@ -1,0 +1,58 @@
+<div class="NOK-Simple-Carrusel {% if classes %}{{ classes|join(' ') }}{% endif %}">
+    <div class="NOK-Wrapper">
+        {% for product in products %}
+            <div class="NOK-ItemWrapper">
+                {% set clickUrl = product.getOfferWithBestPrice.getClickUrl|clickUrl(campaign_id) %}
+                <a href="{{ clickUrl }}" target="_blank" {% if clickUrl|isNoFollowUrl %}rel="nofollow"{% endif %} class="NOK-OfferLink">
+                    {% if 'Big' in classes %}
+                        {% set photoSize = '200x200' %}
+                    {% else %}
+                        {% set photoSize = '100x100' %}
+                    {% endif %}
+                    <img src="{{ product.getPhotoId|photoUrl(photoSize,product.getTitle) }}" class="NOK-Image"/>
+                    <span class="NOK-Title">{{ product.getTitle|raw }}</span>
+                    <span class="NOK-Price">{{ product.getOfferWithBestPrice.getPrice|price }} zł</span>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+
+<script>
+    jQuery(function () {
+      var NOKCarouselId = '.NOK-Simple-Carrusel';
+          var NOKTimer = setInterval( function () {
+            if ( 'undefined' !== typeof Swiper ){
+              NOKSwiper();
+              clearInterval(NOKTimer);
+              jQuery(NOKCarouselId).addClass('NOK-visible');
+            }
+          }, 500);
+
+          function NOKSwiper() {
+            var swiper = new Swiper(NOKCarouselId, {
+              paginationClickable: true,
+              spaceBetween: 0,
+              slidesPerView: {% if 'Big' in classes %}3{% else %}4{% endif %},
+              loop: true,
+              slideClass: 'NOK-ItemWrapper',
+              wrapperClass: 'NOK-Wrapper',
+              autoplay: 2500,
+              autoplayDisableOnInteraction: false,
+              breakpoints: {
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 10
+                },
+                480: {
+                  slidesPerView: 3,
+                  spaceBetween: 20
+                }
+              }
+            });
+          }
+    });
+</script>
+

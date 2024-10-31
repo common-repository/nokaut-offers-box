@@ -1,0 +1,1396 @@
+#NOK-Simple-List,
+#NOK-Simple-Boxs,
+#NOK-Simple-Box,
+.NOK-Simple-Carrusel { position: relative; background: white}
+#NOK-Simple-List *,
+#NOK-Simple-Boxs *,
+#NOK-Simple-Box *,
+.NOK-Simple-Carrusel * { box-sizing: border-box;}
+#NOK-Simple-List:after,
+#NOK-Simple-Boxs:after,
+#NOK-Simple-Box:after,
+.NOK-Simple-Carrusel:after { clear: both; content: ''; display: block;}
+.NOK-Wrapper {}
+.NOK-ItemWrapper {}
+.NOK-OfferLink { text-decoration: none !important; position: relative;}
+.NOK-Image { display: block;}
+.NOK-Title { display: block;}
+.NOK-Price {text-decoration: none !important; }
+
+/* List */
+#NOK-Simple-List { position: relative;}
+#NOK-Simple-List .NOK-Image { float: left; margin-right: 20px; display: block; width: 100px; height: 100px; box-shadow:0 0 0 5px #fff}
+#NOK-Simple-List .NOK-ItemWrapper {border:0; text-decoration: none }
+#NOK-Simple-List .NOK-ItemWrapper:after { content: ''; display: block; clear: both;}
+#NOK-Simple-List .NOK-Title { color: #000; font-size: 18px; line-height: 22px; font-weight: 700; padding-top: 10px;float: left; width: calc(100% - 240px);}
+#NOK-Simple-List .NOK-Price { display: block; min-width: 100px; text-align: right; color:#c10000; float: right; font-size: 20px; line-height: 22px; font-weight: 700; padding-top: 10px;}
+#NOK-Simple-List .NOK-CTA { background: #c10000; line-height: 40px; height: 40px; display: block; float: right; color: white; font-weight: 700; padding: 0 15px; border-radius: 20px; margin-top: 15px}
+#NOK-Simple-List .NOK-ItemWrapper a {text-decoration: none !important; transition: all .2s; display: block;clear: both; padding-bottom: 5px; border-bottom: 1px solid #eee; position: relative;padding: 5px 20px 5px 0; box-shadow: none}
+#NOK-Simple-List .NOK-ItemWrapper a *{text-decoration: none !important}
+#NOK-Simple-List .NOK-ItemWrapper a:after { content: ''; display: block; clear: both;}
+#NOK-Simple-List .NOK-ItemWrapper a:hover { background: #f6f6f6;}
+#NOK-Simple-List.Big .NOK-Image { width: 200px; height: 200px;}
+#NOK-Simple-List .NOK-Title {width: calc(100% - 340px);}
+
+/* Boxes */
+#NOK-Simple-Boxs { position: relative; }
+#NOK-Simple-Boxs .NOK-ItemWrapper { padding: 10px; width: 25%; float: left; padding: 10px;}
+#NOK-Simple-Boxs.NOK-row1 .NOK-ItemWrapper {width: 100%}
+#NOK-Simple-Boxs.NOK-row2 .NOK-ItemWrapper {width: 50%}
+#NOK-Simple-Boxs.NOK-row3 .NOK-ItemWrapper {width: 33.3%}
+#NOK-Simple-Boxs.NOK-row5 .NOK-ItemWrapper {width: 20%}
+#NOK-Simple-Boxs .NOK-ItemWrapper {min-width:145px}
+#NOK-Simple-Boxs .NOK-ItemWrapper a *{text-decoration: none !important}
+#NOK-Simple-Boxs .NOK-ItemWrapper a {text-decoration: none !important; transition: all .2s;  display: block; position: relative; border:1px solid #ddd; padding: 15px; border-left: 0; border-right: 0; border-bottom: 3px solid #ddd; color: #000;}
+#NOK-Simple-Boxs .NOK-ItemWrapper a:after { content: ''; display: block; clear: both;}
+#NOK-Simple-Boxs .NOK-Title { font-size: 14px; line-height: 18px; font-weight: 700; height: 36px; overflow: hidden; margin-bottom: 10px; text-align: center;}
+#NOK-Simple-Boxs .NOK-Image { margin: 10px auto;transition: all .2s; }
+#NOK-Simple-Boxs .NOK-Price { color: #c10000; font-weight: 700;  font-size: 14px; margin-bottom: 10px; display: block; text-align: center;}
+#NOK-Simple-Boxs .NOK-CTA { transition: all .2s; background: #c10000; line-height: 40px; height: 40px; display: block;  color: white; font-weight: 700; padding: 0 15px; border-radius: 20px; margin-top: 15px; margin:  0 auto; text-align: center; white-space: nowrap !important;}
+#NOK-Simple-Boxs .NOK-ItemWrapper a:hover { border-bottom-color: #000;}
+#NOK-Simple-Boxs .NOK-ItemWrapper a:hover .NOK-CTA { background: #000; letter-spacing: 0px;}
+#NOK-Simple-Boxs .NOK-ItemWrapper a:hover .NOK-Image {transform:scale(1.1)}
+
+/* Box */
+#NOK-Simple-Box { position: relative;margin: 0 auto}
+#NOK-Simple-Box .NOK-Wrapper {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-flow: row wrap; justify-content: space-around;}
+#NOK-Simple-Box .NOK-ItemWrapper { width: 100%;display: block;  max-width: 300px; margin-bottom: 10px;}
+#NOK-Simple-Box .NOK-ItemWrapper a *{text-decoration: none !important}
+#NOK-Simple-Box .NOK-ItemWrapper a {text-decoration: none !important; transition: all .2s;  display: block; position: relative; border:1px solid #ddd; padding: 15px; border: 3px solid #ddd; color: #000;}
+#NOK-Simple-Box .NOK-ItemWrapper a:after { content: ''; display: block; clear: both;}
+#NOK-Simple-Box .NOK-Title { font-size: 16px; line-height: 20px; font-weight: 700; height: 40px; overflow: hidden; margin-bottom: 10px; text-align: center;}
+#NOK-Simple-Box .NOK-Image { margin: 20px auto 5px;transition: all .2s; }
+#NOK-Simple-Box .NOK-Price { color: #c10000; font-weight: 700;  font-size: 14px; margin-bottom: 10px; display: block; text-align: center;}
+#NOK-Simple-Box .NOK-CTA { transition: all .2s; background: #c10000; line-height: 40px; height: 40px; display: block;  color: white; font-weight: 700; padding: 0 15px; border-radius: 20px; margin-top: 15px; margin:  0 auto; text-align: center; max-width: 120px;}
+#NOK-Simple-Box .NOK-ItemWrapper a:hover { border-color: #000;}
+#NOK-Simple-Box .NOK-ItemWrapper a:hover .NOK-CTA { background: #000; letter-spacing: 2px; white-space: nowrap !important;}
+#NOK-Simple-Box .NOK-ItemWrapper a:hover .NOK-Image {transform:scale(1.1)}
+#NOK-Simple-Box.NOK-Big .NOK-Title { margin-top: 10px;}
+
+/* Full Box */
+#NOK-Full-Box { position: relative;margin: 0 auto}
+#NOK-Full-Box .NOK-Wrapper {display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-flow: row wrap; justify-content: space-around;}
+#NOK-Full-Box .NOK-ItemWrapper { width: 100%;display: block;  max-width: 500px; margin-bottom: 10px;}
+#NOK-Full-Box .NOK-ItemWrapper .NOK-Item {width: 50%; float: left;}
+#NOK-Full-Box .NOK-ItemWrapper .NOK-Desc { max-height: 200px; overflow: hidden;display: block; font-size: 12px; line-height: 18px; }
+#NOK-Full-Box .NOK-ItemWrapper .NOK-MoreInfo {width: 45%; float: right; padding: 20px;background: #f2f2f2;box-sizing: border-box;}
+#NOK-Full-Box .NOK-ItemWrapper .NOK-MoreInfo ul { margin: 12px 0 0;}
+#NOK-Full-Box .NOK-ItemWrapper .NOK-MoreInfo ul li { display: block; height: 30px; border-top: 1px solid #ddd; line-height: 30px;margin:0; padding:0; font-size:12px;}
+#NOK-Full-Box .NOK-ItemWrapper .NOK-MoreInfo ul li:before {display:none;}
+#NOK-Full-Box .NOK-ItemWrapper .NOK-MoreInfo ul li span { display: block; overflow: hidden; width: 48%; text-overflow: ellipsis; overflow: hidden; float: left; white-space: pre;}
+#NOK-Full-Box .NOK-ItemWrapper .NOK-MoreInfo ul li strong {display: block; overflow: hidden; width: 48%; font-weight: 700; text-overflow: ellipsis;overflow: hidden; float: left; white-space: pre;}
+#NOK-Full-Box .NOK-ItemWrapper a *{text-decoration: none !important}
+#NOK-Full-Box .NOK-ItemWrapper a {text-decoration: none !important; transition: all .2s;  display: block; position: relative; border:1px solid #ddd; padding: 15px; border: 3px solid #ddd; color: #000;}
+#NOK-Full-Box .NOK-ItemWrapper a:after { content: ''; display: block; clear: both;}
+#NOK-Full-Box .NOK-Title { font-size: 16px; line-height: 20px; font-weight: 700; height: 40px; overflow: hidden; margin-bottom: 10px; text-align: center;}
+#NOK-Full-Box .NOK-Image { margin: 20px auto 5px;transition: all .2s; }
+#NOK-Full-Box .NOK-Price { color: #c10000; font-weight: 700;  font-size: 14px; margin-bottom: 10px; display: block; text-align: center;}
+#NOK-Full-Box .NOK-CTA { transition: all .2s; background: #c10000; line-height: 40px; height: 40px; display: block;  color: white; font-weight: 700; padding: 0 15px; border-radius: 20px; margin-top: 15px; margin:  0 auto; text-align: center; max-width: 120px;}
+#NOK-Full-Box .NOK-ItemWrapper a:hover { border-color: #000;}
+#NOK-Full-Box .NOK-ItemWrapper a:hover .NOK-CTA { background: #000; letter-spacing: 2px; white-space: nowrap !important;}
+#NOK-Full-Box .NOK-ItemWrapper a:hover .NOK-Image {transform:scale(1.1)}
+
+/* Carrusel */
+.NOK-Simple-Carrusel{ filter: alpha(opacity=0); opacity: 0; margin: 0 auto; width: 100%; height: 210px; position: relative; overflow: hidden; z-index: 1; margin:0 auto; position:relative; overflow:hidden; backface-visibility:hidden; z-index:1;}
+.NOK-Simple-Carrusel .NOK-ItemWrapper a *{text-decoration: none !important}
+.NOK-Simple-Carrusel .NOK-ItemWrapper a {text-decoration: none !important; transition: all .2s;  box-shadow: 0 0 0 0 #000}
+.NOK-Simple-Carrusel .NOK-ItemWrapper a:hover { box-shadow: 0 3px 0 0 #000;}
+.NOK-Simple-Carrusel .NOK-Wrapper  {position: relative; width: 100%; height: 100%; z-index: 1; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-transition-property: -webkit-transform; -moz-transition-property: -moz-transform; -o-transition-property: -o-transform; -ms-transition-property: -ms-transform; transition-property: transform; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box;}
+.NOK-Simple-Carrusel .swiper-free-mode > .NOK-Wrapper  {  -webkit-transition-timing-function: ease-out; -moz-transition-timing-function: ease-out; -ms-transition-timing-function: ease-out; -o-transition-timing-function: ease-out; transition-timing-function: ease-out; margin: 0 auto;}
+.NOK-Simple-Carrusel .NOK-ItemWrapper {    text-align: center; flex-shrink: 0; position: relative; font-size: 18px; background: #fff; width: 200px; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;}
+.NOK-Simple-Carrusel .NOK-ItemWrapper a { padding: 10px; display: block;}
+.NOK-Simple-Carrusel .NOK-Title { font-size: 12px; line-height: 16px; font-weight: 700; height: 32px; overflow: hidden; margin-bottom: 5px; text-align: center; color: #000;}
+.NOK-Simple-Carrusel .NOK-Image {display: block; margin: 0 auto 10px; width: 100px; height: 100px; min-width: 100px;transition: all .2s;}
+.NOK-Simple-Carrusel .NOK-ItemWrapper a:hover .NOK-Image {transform:scale(1.1)}
+.NOK-Simple-Carrusel.Big  .NOK-Image { width: 200px; height: 200px;}
+.NOK-Simple-Carrusel.Big  { height: 270px}
+.NOK-Simple-Carrusel.NOK-visible{filter: alpha(opacity=100); opacity: 1;}
+/* IE10 Windows Phone 8 Fixes */
+.NOK-Simple-Carrusel .swiper-wp8-horizontal {-ms-touch-action: pan-y;}
+.NOK-Simple-Carrusel .swiper-wp8-vertical {-ms-touch-action: pan-x;}
+.NOK-Simple-Carrusel .NOK-Price { color: #c10000; font-weight: 700;  font-size: 18px; margin-bottom: 10px; display: block; text-align: center;}
+
+
+
+/* Product Mall */
+#NOK-Mall-Default {
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+    width:100%;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top:15px;
+    padding-bottom:15px;
+
+}
+
+#NOK-Mall-Default:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Products{
+    clear: both;
+    padding: 0 10px 0 10px;
+    margin: 0 auto;
+    display: block;
+    border:0;
+    width:100%;
+}
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-ItemWrapper{
+    width: 50%;
+    float: left;
+    padding: 10px;
+    border:0;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-ItemWrapper a {
+    text-decoration: none !important;
+    transition: all .2s;
+    display: block;
+    position: relative;
+    color: #000;
+    border-color: #d2d2d2;
+    border: 2px solid transparent;
+
+}
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-ItemWrapper a:focus {outline:0;}
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-ItemWrapper a:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-Title{
+    font-size: 16px;
+    line-height: 18px;
+    max-height: 60px;
+    text-align:left;
+    padding-right:60px;
+    height: 36px;
+    overflow: hidden;
+    font-weight: 700;
+}
+
+
+
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-Price{
+    color: #df1100;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 28px;
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-Price span{
+    font-size:16px;
+    padding-left:3px;
+}
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-Price em{
+    font-style: normal;
+}
+
+
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-CTA{
+    display: block;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    font-size:13px;
+    line-height:35px;
+    text-align: center;
+    background: #f6f6f6;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: #df1100;
+    padding:0;
+    font-weight: 700;
+    background-image:url('../images/sprite.png');
+    background-position: -122px -3px;
+    text-indent: -99999px;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-OfferLink:hover{
+    box-shadow: 0 0 0 3px #df1100;
+    border-bottom-color:transparent;
+}
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-OfferLink:hover .NOK-CTA{
+    background-color: #fff;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-OfferLink:hover .NOK-Image{
+    transform:scale(1.1);
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-Image {
+    margin: 10px auto;
+}
+
+
+
+#NOK-Mall-Default .NOK-Mall-Products .NOK-OfferLink{
+    display: block;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    padding: 20px;
+    position: relative;
+}
+
+
+
+
+
+
+#NOK-Mall-Default .NOK-Mall-Header{
+    padding:0;
+    margin: 0 20px;
+    padding-bottom: 10px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+    line-height:16px;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-left-column span{
+    font-size:13px;
+    line-height:16px;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-left-column,
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column{
+    width:50%;
+    margin:0 auto;
+    padding:0;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column{
+    text-align:right;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-settings-list{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    width: 150px;
+    margin-right: 0;
+    text-align: right;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-settings-list li{
+    display: inline-block;
+    padding: 0 10px;
+    border-right:1px solid #ddd;
+    line-height: 13px;
+    font-size:13px;
+    width: auto;
+    margin:0 auto;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-settings-list li:last-child{
+    padding-right:0;
+    border-right:0;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column a,
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column a:link,
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column a:active,
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column a:visited{
+    color:#c10000;
+    text-decoration: none;
+    box-shadow: none;
+    cursor:pointer;
+    font-size:13px;
+    line-height:13px;
+    text-shadow:none;
+    border: 0;
+    background: transparent;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column a:hover{
+    text-decoration: underline;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-Mall-Sorts {
+    display: block;
+    position: absolute;
+    right: 10px;
+    border: 0;
+    z-index: 3;
+    overflow:hidden;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-Mall-Sorts  .NOK-Mall-sorts-list{
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    border-radius: 4px;
+    padding:0;
+    margin:0 auto;
+    list-style: none;
+    text-align: left;
+    width:200px;
+    margin-top:5px;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-Mall-Sorts  .NOK-Mall-sorts-list li{
+    padding:0;
+    margin:0 auto;
+    border: 0;
+    list-style: none;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-Mall-Sorts  .NOK-Mall-sorts-list button{
+    padding: 3px 10px;
+    background: transparent;
+    color: #999;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight:400;
+    width: 100%;
+    text-transform: none;
+    text-align: left;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none;
+    cursor:pointer;
+    margin:0 auto;
+    height:auto;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-Mall-Sorts  .NOK-Mall-sorts-list li.NOK-selected-sort,
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-Mall-Sorts  .NOK-Mall-sorts-list li:hover{
+    background: #c10000;
+    color:#fff;
+    border:0;
+}
+
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-Mall-Sorts  .NOK-Mall-sorts-list li.NOK-selected-sort button,
+#NOK-Mall-Default .NOK-Mall-Header .NOK-right-column .NOK-Mall-Sorts  .NOK-Mall-sorts-list li:hover button{
+    color:#fff;
+}
+
+#NOK-Mall-Default .NOK-Mall-Loader{
+    display: block;
+    position: absolute;
+    padding:0;
+    margin:0 auto;
+    border:0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.84);
+    z-index: 5;
+}
+
+#NOK-Mall-Default .NOK-Mall-Loader span{
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    line-height:30px;
+    color: #3f3f3f;
+    display: block;
+}
+
+
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box{
+    width:50%;
+    padding-top:0;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box input.NOK-search-inp{
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.1) inset;
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    margin-right: 16px;
+    border-radius: 4px;
+    width:100%;
+    padding:8px;
+    font-size: 16px;
+    line-height: 25px;
+    height:44px;
+    max-height: 44px;
+    box-sizing: border-box;
+}
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box .NOK-search-container{
+    position: relative;
+    display: inline-block;
+    width: calc(50% - 10px);
+    margin-right:15px;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box .NOK-search-btn{
+    padding: 0;
+    border: 0;
+    box-shadow: unset;
+    font-size: 14px;
+    line-height:44px;
+    font-weight: 300;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 0;
+    height: 44px;
+    padding-top: 10px;
+    vertical-align: top;
+    width: 44px;
+    background-color: #df1100;
+    background-image: url('../images/sprite.png');
+    background-position: -88px -17px;
+    text-indent: -9999px;
+
+}
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box .NOK-search-btn:focus{
+    outline: 0;
+}
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box .NOK-search-in-cat{
+    display: block;
+    width:100%;
+    padding:0;
+    margin:0 auto;
+    padding-top:5px;
+    font-weight: 400;
+}
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box .NOK-search-in-cat label{
+    display: block;
+    width:100%;
+    font-weight: 400;
+}
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box .NOK-search-in-cat input{
+    width:auto;
+    padding: 0px;
+    margin: 0 auto;
+    display: initial;
+}
+
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box .NOK-del-btn{
+    text-transform: uppercase;
+    color: #df1100;
+    text-shadow: none;
+    font-weight: bold;
+    border: 2px solid #df1100;
+    padding: 3px;
+    font-size: 10px;
+    line-height: 10px;
+    border-radius: 4px;
+    position: absolute;
+    top: 13px;
+    right:15px;
+    box-shadow: none;
+    text-decoration: none;
+    background-image:url('../images/sprite.png') ;
+    background-position: -159px -15px;
+    width: 16px;
+    height: 16px;
+
+}
+
+
+
+#NOK-Mall-Default .NOK-Mall-Filters{
+    width:100%;
+    margin-bottom:20px;
+    float:left;
+    padding-top:10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+#NOK-Mall-Default .NOK-btn-more-filters{
+    argin: 0 auto;
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: 0;
+    text-align: right;
+    padding-right: 10px;
+    clear: both;
+    color: #c10000;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+#NOK-Mall-Default .NOK-btn-more-filters:hover{
+    text-decoration: underline;
+}
+
+
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-search-box{
+    width:100%;
+    padding:0 10px 20px 10px;
+}
+
+
+#NOK-Mall-Default .NOK-panel-group{
+    width: 100%;
+    padding:0;
+    margin:0 auto;
+}
+
+
+
+#NOK-Mall-Default .NOK-Mall-Filters .NOK-filtres-list{
+    width:100%;
+    margin:0 auto;
+    padding:0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+
+
+
+#NOK-Mall-Default .NOK-select-list{
+    width: calc(50% - 20px);
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.1) inset;
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    padding: 0 0 10px 0;
+    position: relative;
+    margin:10px;
+    box-sizing: border-box;
+}
+
+#NOK-Mall-Default .NOK-select-list:last-child{
+    flex: auto;
+}
+
+
+
+#NOK-Mall-Default .NOK-select-list label{
+    width: 100%;
+    display: block;
+    color: #999;
+    font-size: 14px;
+    line-height: 22px;
+    cursor: pointer;
+    padding:10px 10px 0 10px;
+    font-weight:400;
+}
+
+
+#NOK-Mall-Default .NOK-select-list label .NOK-more-icon{
+    position: absolute;
+    display: block;
+    right: 15px;
+    top: 15px;
+    padding: 0;
+    width: 14px;
+    height: 16px;
+    background-image:url('../images/sprite.png') ;
+    background-position: -136px -36px;
+    z-index:1;
+    zoom: 1;
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+
+
+#NOK-Mall-Default .NOK-select-list:hover label{
+    color: #df1100;
+}
+
+
+#NOK-Mall-Default .NOK-select-list:hover .NOK-more-icon{
+    color: #df1100;
+}
+
+
+
+#NOK-Mall-Default .NOK-select-list .NOK-list{
+    list-style: none;
+    padding:0;
+    width: calc(100% + 2px);
+    position: absolute;
+    background-color:#fff;
+    margin:8px 0 0 -1px;
+    max-height: 240px;
+    overflow: auto;
+    z-index:3;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+
+#NOK-Mall-Default .NOK-select-list .NOK-list.NOK-hidden{
+    border:0;
+    display:none;
+}
+
+
+#NOK-Mall-Default .NOK-select-list .NOK-list.NOK-hidden li{
+    padding:0;
+    margin:0 auto;
+}
+
+
+#NOK-Mall-Default .NOK-select-list .NOK-select-container{
+    padding-left: 10px;
+    padding-right: 40px;
+}
+
+
+#NOK-Mall-Default .NOK-select-list .NOK-select-container .NOK-selected{
+    position: relative;
+    width: auto;
+    background: #fff;
+    display: inline-flex;
+    border-radius: 4px;
+    box-shadow: unset;
+    color: #df1100;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+    border: 2px solid #df1100;
+    z-index: 1;
+    font-size: 11px;
+    line-height: 11px;
+    padding: 4px 20px 4px 5px;
+    margin-bottom: 0;
+    margin-left: 0;
+    letter-spacing: 1px;
+}
+
+
+#NOK-Mall-Default .NOK-select-list .NOK-select-container .NOK-delete-btn{
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    background-color: transparent;
+    color: #df1100;
+    font-size: 10px;
+    line-height:16px;
+    font-weight: bold;
+    border:0;
+
+    width:16px;
+    height:19px;
+    background-image: url('../images/sprite.png');
+    background-position: -158px -11px;
+    box-shadow:none;
+}
+
+
+
+#NOK-Mall-Default .NOK-select-list .NOK-list li{
+    border-left: 1px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
+    margin:0 auto;
+    list-style: none;
+}
+
+
+#NOK-Mall-Default .NOK-select-list .NOK-list li button{
+    width: 100%;
+    display: block;
+    padding: 7px 10px;
+    text-align: left;
+    color: #000;
+    font-size: 14px;
+    line-height: 16px;
+    background-color: transparent;
+    position: relative;
+    font-weight: 300;
+    border: 0;
+    text-shadow: none;
+    box-shadow: none;
+    margin-bottom:0px;
+    padding-right:44px;
+    background: none;
+    border-radius: 0;
+    height: auto;
+}
+
+
+#NOK-Mall-Default .NOK-select-list .NOK-list li button:hover{
+    background-color: #df1100;
+    color:#fff;
+}
+
+#NOK-Mall-Default .NOK-select-list .NOK-list li button span{
+    font-size: 11px;
+    line-height: 16px;
+    color: #8f8f8f;
+    font-weight: 100;
+    position: absolute;
+    right: 10px;
+}
+
+#NOK-Mall-Default .NOK-select-list .NOK-list li button:hover span{
+    color:#fff;
+}
+
+
+
+/* Product Default */
+
+#NOK-Product-Default{
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:100%;
+    box-sizing: border-box;
+}
+
+#NOK-Product-Default .NOK-product-view{
+    margin-top:20px;
+    margin-bottom:20px;
+    width:100%;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-full-product{
+    width:100%;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-header{
+    width:100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding-bottom:20px;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-header .NOK-Title{
+    width:80%;
+    border: 0;
+    padding: 0;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size:16px;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-header .NOK-Price{
+    width:20%;
+    border: 0;
+    padding: 0;
+    margin: 0 auto;
+    text-align:right;
+
+    color: #df1100;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-header .NOK-Price em{
+    font-style: normal;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-header .NOK-Price span{
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description{
+    width:100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom:20px;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-left{
+    width:40%;
+    text-align: center;
+    background: #fff;
+    padding:10px;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-left img{
+    max-width:100%;
+    margin:0 auto;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-right{
+    width:60%;
+    padding-left:15px;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-right .NOK-top-more-info{
+    font-size:12px;
+    line-height:14px;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-right .NOK-desc-more-info{
+    padding-top:30px;
+    font-size:12px;
+    line-height:14px;
+}
+
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-right .NOK-top-more-info .list-item span{
+    font-weight:bold;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-right .NOK-top-more-info .list-item:after{
+    content: " ";
+    width:8px;
+    height:8px;
+    background-color: #df1100;
+    display: inline-block;
+    border-radius:4px;
+    margin-left:3px;
+    margin-right:3px;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-right .NOK-top-more-info .list-item:last-child:after{
+    display:none;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-right .NOK-desc-more-info .NOK-Desc{
+    height: 98px;
+    overflow: hidden;
+    display: block;
+}
+
+#NOK-Product-Default .NOK-product-view .NOK-product-description .NOK-product-right .NOK-desc-more-info .NOK-More-btn-desc{
+    text-align: left;
+    color: #cfcfcf;
+    font-weight: 100;
+    width:200px;
+    cursor:pointer;
+    padding:0 0 10px 0;
+    display: block;
+}
+
+
+
+#NOK-Product-Default .NOK-small-desc-product{
+    border-top:1px solid #ebebeb;
+    padding:15px;
+    width:100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-left,
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center,
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-right{
+    padding:0;
+    margin:0 auto;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-left{
+    width:20%;
+    text-align: center;
+    position: relative;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-left .NOK-OfferPhoto{
+    text-align: center;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-left .NOK-OfferPhoto img{
+    margin:0 auto;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-45px;
+    margin-top:-45px;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center{
+    width:20%;
+    padding-left:15px;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-right{
+    width:60%;
+    padding-left:15px;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Price{
+    color: #df1100;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    padding-bottom:15px;
+    display: block;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Price em{
+    font-style: normal;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Price span{
+    font-size: 17px;
+    line-height: 28px;
+    font-weight: 700;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop img{
+    padding:0;
+    margin-left:0;
+    margin-bottom:7px;
+    max-width:100%;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop p{
+    margin:0 auto;
+    font-size: 12px;
+    line-height: 14px;
+    padding:0 0 2px 0;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop p .NOK-stars-bg{
+    display:block;
+    width:85px;
+    height:17px;
+    background-image: url('../images/sprite.png');
+    background-repeat:repeat-x;
+    background-position: 0 -35px;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop p .NOK-stars-bg .NOK-Stars{
+    content: ' ';
+    width:17px;
+    height:17px;
+    display: block;
+    background-image: url('../images/sprite.png');
+    background-repeat:repeat-x;
+    background-position: 0 -18px;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop p .NOK-stars-bg .NOK-Stars.s5{ width:85px;}
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop p .NOK-stars-bg .NOK-Stars.s4{ width:68px;}
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop p .NOK-stars-bg .NOK-Stars.s3{ width:51px;}
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop p .NOK-stars-bg .NOK-Stars.s2{ width:34px;}
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop p .NOK-stars-bg .NOK-Stars.s1{ width:17px;}
+
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-center .NOK-Shop p span{
+    font-weight: 700;
+}
+
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-right .NOK-btn{
+    text-align: right;
+    padding-bottom:15px;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-right .NOK-btn a{
+    display: block;
+    text-decoration: none;
+    text-shadow: none;
+    font-size: 11px;
+    line-height: 13px;
+    text-transform: uppercase;
+    padding: 10px 40px 10px 20px;
+    background-color: #df1100;
+    color: #fff;
+    letter-spacing: 1px;
+    width: 200px;
+    margin: 0 auto;
+    margin-right: 0;
+    border-radius: 20px;
+    position: relative;
+    box-shadow:0 1px 2px rgba(0,0,0,0.2),0 0 0 1px #fff;
+    border-color: #b6b6b6;
+    max-width: 100%;
+    margin-right: 18px;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-right .NOK-btn a:focus{
+    outline:0;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-right .NOK-btn a span{
+    display: block;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    font-size: 13px;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    position: absolute;
+    bottom: 20px;
+    color: #df1100;
+    padding: 0;
+    font-weight: 700;
+    top: 50%;
+    margin-top: -18px;
+    right: -10px;
+    background-color: #f6f6f6;
+    background-image: url('../images/sprite.png');
+    background-repeat: no-repeat;
+    background-position: -122px -3px;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-right .NOK-btn a:hover span{
+    background-color: #fff;
+}
+
+#NOK-Product-Default .NOK-small-desc-product .NOK-small-right .NOK-Title{
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#NOK-Product-Default .NOK-OffersAll { display: none; }
+
+
+#NOK-Product-Default .NOK-ShowMore, #NOK-Product-Default .NOK-HideMore{
+    font-size: 13px;
+    line-height: 13px;
+    letter-spacing: 0;
+    text-align: right;
+    clear: both;
+    color: #c10000;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom:5px;
+    margin-right: 0;
+    display: block;
+}
+
+#NOK-Product-Default .NOK-ShowMore:hover, #NOK-Product-Default .NOK-HideMore:hover{
+    text-decoration: underline;
+}
+
+
+/* RWD */
+
+
+#NOK-Simple-List .NOK-Mobile-Small-Text .NOK-Title{
+    font-size:14px;
+    width: calc(100% - 200px);
+
+}
+#NOK-Simple-List .NOK-Mobile-Small-Text .NOK-Price{
+    font-size:14px;
+    min-width:70px;
+}
+
+#NOK-Mall-Default .NOK-Mobile-Small-Text .NOK-CTA,
+#NOK-Simple-Boxs .NOK-Mobile-Small-Text .NOK-CTA{
+    font-size:14px;
+}
+
+
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper,
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-Image,
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-Title,
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-Price,
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-CTA,
+#NOK-Simple-Box .NOK-Mobile .NOK-Item,
+#NOK-Simple-Box .NOK-Mobile .NOK-MoreInfo,
+#NOK-Simple-Box .NOK-Mobile .NOK-ItemWrapper,
+#NOK-Simple-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Image,
+#NOK-Simple-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Title,
+#NOK-Simple-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Price,
+#NOK-Simple-Box .NOK-Mobile .NOK-ItemWrapper .NOK-CTA,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-Item,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-MoreInfo,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-ItemWrapper,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-ItemWrapper .NOK-Image,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-ItemWrapper .NOK-Title,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-ItemWrapper .NOK-Price,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-ItemWrapper .NOK-CTA,
+#NOK-Full-Box .NOK-Mobile .NOK-Item,
+#NOK-Full-Box .NOK-Mobile .NOK-MoreInfo,
+#NOK-Full-Box .NOK-Mobile .NOK-ItemWrapper,
+#NOK-Full-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Image,
+#NOK-Full-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Title,
+#NOK-Full-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Price,
+#NOK-Full-Box .NOK-Mobile .NOK-ItemWrapper .NOK-CTA,
+#NOK-Simple-List .NOK-Mobile .NOK-Item,
+#NOK-Simple-List .NOK-Mobile .NOK-MoreInfo,
+#NOK-Simple-List .NOK-Mobile .NOK-ItemWrapper,
+#NOK-Simple-List .NOK-Mobile .NOK-ItemWrapper .NOK-Image,
+#NOK-Simple-List .NOK-Mobile .NOK-ItemWrapper .NOK-Title,
+#NOK-Simple-List .NOK-Mobile .NOK-ItemWrapper .NOK-Price,
+#NOK-Simple-List .NOK-Mobile .NOK-ItemWrapper .NOK-CTA{
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+    position: relative;
+    width:100%;
+    min-width:100px;
+    max-width:100%;
+    padding:0;
+}
+
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-Image,
+#NOK-Simple-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Image,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-ItemWrapper .NOK-Image,
+#NOK-Full-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Image,
+#NOK-Simple-List .NOK-Mobile .NOK-ItemWrapper .NOK-Image{
+    width:auto;
+    min-width:0;
+}
+
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-Title,
+#NOK-Simple-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Title,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-ItemWrapper .NOK-Title,
+#NOK-Full-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Title,
+#NOK-Simple-List .NOK-Mobile .NOK-ItemWrapper .NOK-Title{
+    padding:20px 0 0 0;
+    font-size: 18px;
+    line-height: 24px;
+    height:auto;
+}
+
+#NOK-Mall-Default.NOK-Mobile .NOK-MoreInfo,
+#NOK-Simple-Box .NOK-Mobile .NOK-MoreInfo,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-MoreInfo,
+#NOK-Full-Box .NOK-Mobile .NOK-MoreInfo,
+#NOK-Simple-List .NOK-Mobile .NOK-MoreInfo{
+    margin-top:20px;
+    padding:20px;
+}
+
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-Price,
+#NOK-Simple-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Price,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-ItemWrapper .NOK-Price,
+#NOK-Full-Box .NOK-Mobile .NOK-ItemWrapper .NOK-Price,
+#NOK-Simple-List .NOK-Mobile .NOK-ItemWrapper .NOK-Price{
+    font-size:22px;
+    padding-bottom:10px;
+}
+
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-OfferLink,
+#NOK-Simple-Box .NOK-Mobile .NOK-ItemWrapper .NOK-OfferLink,
+#NOK-Simple-Boxs .NOK-Mobile .NOK-ItemWrapper .NOK-OfferLink,
+#NOK-Full-Box .NOK-Mobile .NOK-ItemWrapper .NOK-OfferLink,
+#NOK-Simple-List .NOK-Mobile .NOK-ItemWrapper .NOK-OfferLink{
+    padding:15px;
+}
+
+
+
+
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper{
+    width:100%;
+    margin-bottom:20px;
+}
+
+
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-OfferLink .NOK-CTA{
+    margin:0 auto;
+    margin-top:20px;
+    position: relative;
+    right:auto;
+    bottom:auto;
+    background-image: none;
+    text-indent: initial;
+}
+
+#NOK-Mall-Default .NOK-Mobile .NOK-ItemWrapper .NOK-OfferLink .NOK-Title{
+    height: auto;
+    overflow: unset;
+    max-height: initial;
+}
+
+
+
+#NOK-Mall-Default .NOK-Mobile .NOK-select-list{
+    width:100%;
+    margin:0 auto;
+    margin-top:10px;
+}
+
+#NOK-Mall-Default .NOK-Mobile .NOK-search-box{
+    padding:0;
+    margin:0 auto;
+}
+
+#NOK-Mall-Default .NOK-Mobile .NOK-search-box .NOK-search-container{
+    width:100%;
+}
+
+#NOK-Mall-Default .NOK-Mobile .NOK-search-box .NOK-search-btn{
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-image: none;
+    text-indent: unset;
+    padding:0;
+    color:#fff;
+}
+
+#NOK-Mall-Default .NOK-Mobile  .NOK-Mall-Header .NOK-left-column,
+#NOK-Mall-Default .NOK-Mobile  .NOK-Mall-Header .NOK-right-column{
+    width:100%;
+    margin:0;
+}
+
+
+#NOK-Product-Default .NOK-Mobile-Small-Text .NOK-product-header .NOK-Title,
+#NOK-Product-Default .NOK-Mobile-Small-Text .NOK-product-header .NOK-Price,
+#NOK-Product-Default .NOK-Mobile .NOK-product-header .NOK-Title,
+#NOK-Product-Default .NOK-Mobile .NOK-product-header .NOK-Price{
+    width:100%;
+}
+
+
+#NOK-Product-Default .NOK-Mobile-Small-Text .NOK-small-center .NOK-Price span{
+    font-size:14px;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-product-view .NOK-product-header{
+    display: block;
+    padding-bottom: 0;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-product-header .NOK-Title{
+    font-size: 15px;
+    line-height: 18px;
+}
+
+
+#NOK-Product-Default .NOK-Mobile .NOK-product-header .NOK-Price{
+    width: 100%;
+    text-align: right;
+    display: block;
+}
+
+
+
+#NOK-Product-Default .NOK-Mobile .NOK-product-view .NOK-product-description{
+    display:block;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-product-view .NOK-product-description .NOK-product-left{
+    width:100%;
+    text-align:center;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-product-view .NOK-product-description .NOK-product-right{
+    width:100%;
+    padding-left:0;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-product-view .NOK-product-description .NOK-product-left .NOK-Image{
+    margin:0 auto;
+    max-width: 100%;
+}
+
+#NOK-Product-Default .NOK-Mobile  .NOK-product-view .NOK-product-description .NOK-product-right .NOK-desc-more-info{
+    margin-bottom:30px;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-small-desc-product{
+    display: block;
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+}
+
+#NOK-Product-Default .NOK-small-desc-product a.NOK-Link{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: block;
+    border:0;
+    box-shadow: none;
+    background:transparent;
+}
+
+#NOK-Product-Default .NOK-small-desc-product a.NOK-Link:focus,#NOK-Product-Default .NOK-small-desc-product a.NOK-Link:hover{
+    outline: 0;
+    background:transparent;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-small-desc-product .NOK-small-left,
+#NOK-Product-Default .NOK-Mobile .NOK-small-desc-product .NOK-small-center,
+#NOK-Product-Default .NOK-Mobile .NOK-small-desc-product .NOK-small-right {
+    display: block;
+    padding-left:0;
+    paddin-right:0;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-small-desc-product .NOK-small-left{
+    width: 50%;
+    float: left;
+    border:0;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-small-desc-product .NOK-small-center{
+    width: 50%;
+    float: right;
+    padding-left: 15px;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-small-desc-product .NOK-small-center .NOK-Price{
+    padding-bottom:0;
+}
+
+#NOK-Product-Default .NOK-Mobile .NOK-small-desc-product .NOK-small-right{
+    padding-top:20px;
+    clear: both;
+    width:100%;
+}
+
+
+#NOK-Product-Default .NOK-Mobile .NOK-small-desc-product .NOK-small-left .NOK-OfferPhoto img{
+    position: relative;
+    margin:0 auto;
+    top:auto;
+    left:auto;
+}
+
+#NOK-Mall-Default .NOK-Mobile .NOK-Mall-Header .NOK-left-column {
+    padding-bottom:10px;
+}

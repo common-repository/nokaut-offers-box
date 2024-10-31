@@ -1,0 +1,242 @@
+<div data-hook="nokaut-mall-root" id="NOK-Mall-Default" class="NOK-box-container">
+    <div class="NOK-Wrapper">
+
+        <div class="NOK-Mall-Header">
+            <div class="NOK-left-column">
+                <span>{{ title }}</span>
+            </div>
+            <div class="NOK-right-column">
+                <ul class="NOK-settings-list">
+                    <li><a data-hook="nokaut-mall-sorts">sortowanie</a></li>
+                    <li><a data-hook="nokaut-mall-filters">filtry</a></li>
+                </ul>
+
+                <div class="NOK-Mall-Sorts" data-hook="nokaut-mall-sorts-body" style="display: none;">
+                    <ul class="NOK-Mall-sorts-list">
+                        {% for sort in products.getMetadata.getSorts %}
+                            {% if sort.getId in [null, 'najpopularniejsze','najtansze','najdrozsze'] or sort.getIsFilter %}
+                                <li {% if sort.getIsFilter %}class="NOK-selected-sort"{% endif %}>
+                                    <button data-nokaut-url="{{ sort.getUrl }}">
+                                        {{ producer.getName }} {{ producer.getTotal }}
+                                        {% if not sort.getId %}
+                                            {% if products.getPhrase.getValue %}
+                                                Najtrafniejsze
+                                            {% else %}
+                                                Wybrane
+                                            {% endif %}
+                                        {% else %}
+                                            {{ sort.getName }}
+                                        {% endif %}
+                                    </button>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="NOK-Mall-Loader" data-hook="nokaut-mall-loader" style="display: none;">
+            <span>Trwa ładowanie...</span>
+        </div>
+
+        <div class="NOK-Mall-Filters" data-hook="nokaut-mall-filters-body" style="display: none;">
+            <div class="NOK-panel-group">
+                <div class="NOK-row">
+
+                    <div data-hook="nokaut-search" class="NOK-search-box">
+                        <div class="NOK-search-container">
+
+                            <input type="text" class="NOK-search-inp" data-hook="nokaut-search-input"
+                                   data-search-category-url-template='{{ products.getPhrase.urlInTemplate }}'
+                                   data-search-global-url-template='/produkt:%s.html'
+                                   value="{{ products.getPhrase.getValue }}">
+
+
+                            {% if products.getPhrase.getValue %}
+                                <a type="button" class="NOK-del-btn" data-hook="nokaut-search-out"
+                                   data-nokaut-url="{{ products.getPhrase.getUrlOut }}" href="#">
+                                    <span></span>
+                                </a>
+                            {% endif %}
+
+                        </div>
+
+                        <button data-hook="nokaut-search-submit" class="NOK-search-btn" >szukaj</button>
+
+                        {% if filtersSelectedCategories|length %}
+                            <div class="NOK-search-in-cat">
+                                <label>
+                                    <input type="checkbox" data-hook="nokaut-search-in-category"
+                                           checked="checked" value="1"> w bieżącej kategorii
+                                </label>
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="NOK-filtres-list">
+                        {% if not filtersCategories.isExcluded %}
+                            <div class="NOK-select-list">
+                                <label>Kategoria: <span class="NOK-more-icon"></span></label>
+
+                                <div class="NOK-select-container">
+                                    {% for category in filtersCategories %}
+                                      {% if category.getTotal > 0 and category.getIsFilter %}
+                                        <div class="NOK-selected">{{ category.getName }}
+                                            <button class="NOK-delete-btn" data-nokaut-url="{{ category.getUrlOut }}"  title="{{ category.getName }}"></button>
+                                        </div>
+                                      {% endif %}
+                                    {% endfor %}
+                                </div>
+
+                                <ul class="NOK-list NOK-hidden">
+                                    {% for category in filtersCategories %}
+                                      {% if category.getTotal > 0 and not category.getIsFilter %}
+                                        <li><button data-nokaut-url="{{ category.getUrlIn }}">{{ category.getName }} <span>({{ category.getTotal }})</span></button></li>
+                                      {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        {% if not filtersShops.isExcluded %}
+                            <div class="NOK-select-list">
+                                <label>Sklep: <span class="NOK-more-icon"></span></label>
+
+                                <div class="NOK-select-container">
+                                    {% for shop in filtersShops %}
+                                      {% if shop.getTotal > 0 and shop.getIsFilter %}
+                                        <div class="NOK-selected">{{ shop.getName }}
+                                            <button class="NOK-delete-btn" data-nokaut-url="{{ shop.getUrl }}"
+                                                    title="{{ shop.getName }}"></button>
+                                        </div>
+                                      {% endif %}
+                                    {% endfor %}
+                                </div>
+
+                                <ul class="NOK-list NOK-hidden">
+                                    {% for shop in filtersShops %}
+                                      {% if shop.getTotal > 0 and not shop.getIsFilter %}
+                                        <li>
+                                            <button data-nokaut-url="{{ shop.getUrl }}">{{ shop.getName }}
+                                                <span>({{ shop.getTotal }})</span></button>
+                                        </li>
+                                      {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        {% if not filtersProducers.isExcluded %}
+                            <div class="NOK-select-list">
+                                <label>Producent: <span class="NOK-more-icon"></span></label>
+
+                                <div class="NOK-select-container">
+                                    {% for producer in filtersProducers %}
+                                      {% if producer.getTotal > 0 and producer.getIsFilter %}
+                                        <div class="NOK-selected">{{ producer.getName }}
+                                            <button class="NOK-delete-btn" data-nokaut-url="{{ producer.getUrl }}"  title="{{ producer.getName }}"></button>
+                                        </div>
+                                      {% endif %}
+                                    {% endfor %}
+                                </div>
+
+                                <ul class="NOK-list NOK-hidden">
+                                    {% for producer in filtersProducers %}
+                                      {% if producer.getTotal > 0 and not producer.getIsFilter %}
+                                        <li><button data-nokaut-url="{{ producer.getUrl }}">{{ producer.getName }} <span>({{ producer.getTotal }})</span></button></li>
+                                      {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        {% if filtersPriceRanges|length > 1 %}
+                            <div class="NOK-select-list">
+                                <label>Cena: <span class="NOK-more-icon"></span></label>
+
+                                <div class="NOK-select-container">
+                                    {% for range in filtersPriceRanges %}
+                                      {% if range.getTotal > 0 and range.getIsFilter %}
+                                        <div class="NOK-selected">{{ range.getMin|price }} - {{ range.getMax|price }} zł
+                                            <button class="NOK-delete-btn" data-nokaut-url="{{ range.getUrl }}"  title="{{ range.getMin|price }} - {{ range.getMax|price }} zł"></button>
+                                        </div>
+                                      {% endif %}
+                                    {% endfor %}
+                                </div>
+
+                                <ul class="NOK-list NOK-hidden">
+                                    {% for range in filtersPriceRanges %}
+                                      {% if range.getTotal > 0 and not range.getIsFilter %}
+                                        <li><button data-nokaut-url="{{ range.getUrl }}">{{ range.getMin|price }} - {{ range.getMax|price }} zł<span>({{ range.getTotal }})</span></button></li>
+                                      {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        {% for property in filtersProperties %}
+                          {% if not property.isExcluded %}
+                            <div class="NOK-select-list">
+                                <label>{{ property.getName }}: <span class="NOK-more-icon"></span></label>
+
+                                <div class="NOK-select-container">
+                                    {% for value in property %}
+                                      {% if value.getTotal > 0 and value.getIsFilter %}
+                                        <div class="NOK-selected">{{ value.getName }} {{ property.getUnit }}
+                                            <button class="NOK-delete-btn" data-nokaut-url="{{ value.getUrl }}"  title="{{ value.getName }}"></button>
+                                        </div>
+                                      {% endif %}
+                                    {% endfor %}
+                                </div>
+
+                                <ul class="NOK-list NOK-hidden">
+                                    {% for value in property %}
+                                      {% if value.getTotal > 0 and not value.getIsFilter %}
+                                        <li><button data-nokaut-url="{{ value.getUrl }}">{{ value.getName }} {{ property.getUnit }}<span>({{ value.getTotal }})</span></button></li>
+                                      {% endif %}
+                                    {% endfor %}
+                                </ul>
+
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="NOK-Mall-Products">
+            {% if products.count %}
+                <div data-hook="nokaut-mall-products">
+                    {% for product in products %}
+                      {% if product.getOfferWithBestPrice.getPrice %}
+                        <div class="NOK-ItemWrapper"
+                             data-hook="nokaut-mall-product"{% if loop.index > 4 %} style="display: none;"{% endif %}>
+                            {% set clickUrl = product.getOfferWithBestPrice.getClickUrl|clickUrl(campaign_id) %}
+                            <a href="{{ clickUrl }}" target="_blank" {% if clickUrl|isNoFollowUrl %}rel="nofollow"{% endif %} class="NOK-OfferLink">
+                                {% if 'Big' in classes %}
+                                    {% set photoSize = '200x200' %}
+                                {% else %}
+                                    {% set photoSize = '100x100' %}
+                                {% endif %}
+                                <img src="{{ product.getPhotoId|photoUrl(photoSize,product.getTitle) }}"
+                                     class="NOK-Image"/>
+                                <span class="NOK-Price">{{ product.getOfferWithBestPrice.getPrice|price }}<span>zł</span></span>
+                                <span class="NOK-Title">{{ product.getTitle|raw }}</span>
+                                <span class="NOK-CTA">sprawdź</span>
+                            </a>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                </div>
+
+                <div class="NOK-btn-more-filters" data-hook="nokaut-mall-products-more">zobacz więcej</div>
+            {% else %}
+                <div>Nie znaleziono produktów.</div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>

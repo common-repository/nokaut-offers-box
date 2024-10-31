@@ -1,0 +1,9 @@
+<div style="{% if content is not defined %}display: none;{% endif %}"
+     data-hook="nokaut-offers-box" data-id="{{ hook_id }}" data-url="{{ nokaut_url }}"
+     data-cid="{{ campaign_id }}" data-template="{{ template }}"
+        {% if limit is defined %} data-limit="{{ limit }}"{% endif %}
+        {% if limit_min is defined %} data-limit-min="{{ limit_min }}"{% endif %}
+        {% if classes is defined %} data-classes="{{ classes }}"{% endif %}
+        {% if content is defined %} data-loaded="true"{% endif %}>
+    {% if content is defined %}{{ content|raw }}{% endif %}
+</div>
